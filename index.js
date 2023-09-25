@@ -144,12 +144,12 @@ app.get('/shopify/callback', async (req, res) => {
             res.status(200).end(shopResponse);
           })
           .catch((error) => {
-            res.status(error.statusCode).send(error.error.error_description);
+            res.status(error?.statusCode).send(error?.error?.error_description);
           });
       })
       .catch((error) => {
         console.log(error);
-        res.status(error.statusCode).send(error?.error?.error_description);
+        res.status(error?.statusCode).send(error?.error?.error_description);
       });
 
   } else {
