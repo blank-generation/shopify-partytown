@@ -145,7 +145,8 @@ app.get('/shopify/callback', async (req, res) => {
           });
       })
       .catch((error) => {
-        res.status(error.statusCode).send(error.error.error_description);
+        console.log(error);
+        res.status(error.statusCode).send(error?.error?.error_description);
       });
 
   } else {
